@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Fibonacci series</title>
+    <script type="text/javascript">
+        function generateFibonacci(n) {
+            var fib = [0, 1];
+            for (var i = 2; i < n; i++) {
+                fib[i] = fib[i-1] + fib[i-2];
+            }
+            return fib.slice(0, n);
+        }
+
+        // Function to handle Fibonacci input and output
+        function handleFibonacci() {
+            var n = prompt("Enter the number of Fibonacci numbers to generate:");
+            n = parseInt(n);
+            if (isNaN(n) || n <= 0) {
+                alert("Please enter a valid positive number.");
+                return;
+            }
+            var fibNumbers = generateFibonacci(n);
+            document.getElementById('fibonacciOutput').innerHTML = "First " + n + " Fibonacci numbers: " + fibNumbers.join(" ,</br> ");
+        }
+    </script>
+</head>
+<body>
+    <h1>Fibonacci and Input Demo</h1>
+    
+    <h2>a) Fibonacci Numbers</h2>
+    <button onclick="handleFibonacci()">Generate Fibonacci Numbers</button>
+    <p id="fibonacciOutput"></p>
+
+</body>
+</html>

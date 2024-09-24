@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country selector</title>
+</head>
+<style>
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 97vh;
+        color: wheat;
+        background-color: rgb(60, 59, 59);
+    }
+    select{
+        background-color: black;
+        color: wheat;
+        font-size: x-large;
+        border-radius: 10px;
+        padding-inline:5px ;
+    }
+    .box1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #121212;
+        flex-direction: column;
+        height: 40%;
+        width: 30%;
+        border-radius: 30px;
+    }
+    .box2{
+        display: flex;
+        width: 400px;
+        font-size: xx-large;
+        gap: 20px;
+        text-wrap: wrap;
+        outline: none;
+    }
+</style>
+<body>
+  <div class="box1"> 
+  <div class="box2"> 
+      <label for="Country">Country :</label>
+      <select id="Country" onchange="fetch()">
+          <option value="India">India</option>
+          <option value="America">America</option>
+          <option value="Germany">Germany</option>
+          <option value="Australia">Australia</option>
+          <option value="China">China</option>
+        </select>
+    </div>
+    <div class="box2"> 
+        <p>Capital :</label>
+        <p id="Capital"></p >
+    </div>
+    </div>
+</body>
+<script >
+    
+const fetch =()=>{
+    let capital = document.querySelector('#Capital')
+    let counrty= document.querySelector('#Country').value;
+   if(counrty == 'India'){
+      capital.innerText = 'Dilhi'
+   }
+   else if(counrty == 'America'){
+    capital.innerText = 'Washington, D.C.'
+   }
+   else if(counrty == 'Germany'){
+    capital.innerText = 'Berlin'
+   }
+   else if(counrty == 'Australia'){
+    capital.innerText = 'Vienna'
+   }
+   else if(counrty == 'China'){
+    capital.innerText = 'Beijing'
+   }
+}
+fetch();
+</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Odd or Even Checker</title>
+    <style>
+        .message {
+            margin: 5px 0;
+        }
+    </style>
+    <script type="text/javascript">
+        function checkOddOrEven() {
+            var output = document.getElementById('output');
+            for (var i = 0; i <= 15; i++) {
+                var message = document.createElement('div');
+                message.className = 'message';
+                if (i % 2 === 0) {
+                    message.textContent = i + " is even.";
+                } else {
+                    message.textContent = i + " is odd.";
+                }
+                output.appendChild(message);
+            }
+        }
+    </script>
+</head>
+<body onload="checkOddOrEven()">
+    <h1>Odd or Even Checker</h1>
+    <div id="output"></div>
+</body>
+</html>
